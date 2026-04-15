@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="manifest" href="manifest.json">
+
+<meta charset="UTF-8">
+<title>짜장증권</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app"></div>
+
+<div class="tabbar">
+  <div onclick="tab('home')">홈</div>
+  <div onclick="tab('search')">검색</div>
+  <div onclick="tab('asset')">자산</div>
+  <div onclick="tab('account')">계정</div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
