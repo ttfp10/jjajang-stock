@@ -1,24 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head><link rel="manifest" href="manifest.json">
-
+<head>
 <meta charset="UTF-8">
 <title>짜장증권</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
+
+<style>
+body {
+  background:#111;
+  color:#fff;
+  margin:0;
+  font-family:sans-serif;
+}
+
+#app {
+  padding:15px;
+  margin-bottom:60px;
+}
+
+.tabbar {
+  position:fixed;
+  bottom:0;
+  width:100%;
+  display:flex;
+  background:#222;
+}
+
+.tabbar div {
+  flex:1;
+  text-align:center;
+  padding:15px;
+  border-top:1px solid #444;
+}
+</style>
+
 </head>
 <body>
 
 <div id="app"></div>
 
 <div class="tabbar">
-  <div onclick="tab('home')">홈</div>
-  <div onclick="tab('search')">검색</div>
-  <div onclick="tab('asset')">자산</div>
-  <div onclick="tab('account')">계정</div>
+  <div onclick="alert('홈 클릭됨')">홈</div>
+  <div onclick="alert('검색 클릭됨')">검색</div>
+  <div onclick="alert('자산 클릭됨')">자산</div>
+  <div onclick="alert('계정 클릭됨')">계정</div>
 </div>
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="app.js"></script>
+
 </body>
 </html>
