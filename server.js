@@ -216,4 +216,22 @@ setInterval(()=>{
 
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, ()=>console.log("server running"));
+db.serialize(() => {
+  db.run(`CREATE TABLE IF NOT EXISTS stocks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    price INTEGER,
+    desc TEXT,
+    type TEXT,
+    leverage INTEGER
+  )`);
 
+  db.get("SELECT COUNT(*) as count FROM stocks", (err, row) => {
+    if (row.count === 0) {
+      db.run(`
+        INSERT INTO stocks (name, price, desc, type, leverage)
+        VALUES ('짜장전자', 50000, '테스트 기업', 'normal', 1)
+      `);
+    }
+  });
+});
